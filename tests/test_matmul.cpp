@@ -26,10 +26,18 @@ int main() {
 
     Matrix C = matmul_naive(A, B);
 
-    check(C.at(0,0), 21);
+    check(C.at(0,0), 19);
     check(C.at(0,1), 22);
     check(C.at(1,0), 43);
     check(C.at(1,1), 50);
 
     std::cout << "Naive test passed\n";
+
+    Matrix D = matmul_ikj(A, B);
+    for (std::size_t i = 0; i < A.n; ++i) {
+    	for (std::size_t j = 0; j < A.n; ++j) {
+        	check(D.at(i, j), C.at(i, j));
+    	}
+    }
+    std::cout << "IKJ test passed\n";
 }
