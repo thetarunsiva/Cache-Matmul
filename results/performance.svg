@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="480" viewBox="0 0 1100 480">
+<style>
+text { font-family: Arial, sans-serif; fill: #222; }
+.title { font-size: 18px; font-weight: 600; text-anchor: middle; }
+.label { font-size: 13px; text-anchor: middle; }
+.tick { font-size: 12px; fill: #555; }
+.grid { stroke: #ddd; stroke-width: 1; }
+</style>
+<rect width="100%" height="100%" fill="white"/>
+<text x="303.5" y="25" class="title">Runtime vs. matrix size</text>
+<line x1="72.0" y1="418.0" x2="535.0" y2="418.0" class="grid"/>
+<text x="62.0" y="422.0" class="tick" text-anchor="end">0</text>
+<line x1="72.0" y1="344.4" x2="535.0" y2="344.4" class="grid"/>
+<text x="62.0" y="348.4" class="tick" text-anchor="end">3200</text>
+<line x1="72.0" y1="270.8" x2="535.0" y2="270.8" class="grid"/>
+<text x="62.0" y="274.8" class="tick" text-anchor="end">6400</text>
+<line x1="72.0" y1="197.2" x2="535.0" y2="197.2" class="grid"/>
+<text x="62.0" y="201.2" class="tick" text-anchor="end">9600</text>
+<line x1="72.0" y1="123.6" x2="535.0" y2="123.6" class="grid"/>
+<text x="62.0" y="127.6" class="tick" text-anchor="end">12800</text>
+<line x1="72.0" y1="50.0" x2="535.0" y2="50.0" class="grid"/>
+<text x="62.0" y="54.0" class="tick" text-anchor="end">16000</text>
+<text x="72.0" y="442" class="tick" text-anchor="middle">256</text>
+<text x="303.5" y="442" class="tick" text-anchor="middle">512</text>
+<text x="535.0" y="442" class="tick" text-anchor="middle">1024</text>
+<text x="303.5" y="470" class="label">Matrix dimension N</text>
+<text transform="translate(19.0,234.0) rotate(-90)" class="label">Median runtime (ms)</text>
+<polyline points="72.0,412.5 303.5,329.1 535.0,73.6" fill="none" stroke="#333333" stroke-width="2.5"/>
+<circle cx="72.0" cy="412.5" r="3.5" fill="#333333"/>
+<circle cx="303.5" cy="329.1" r="3.5" fill="#333333"/>
+<circle cx="535.0" cy="73.6" r="3.5" fill="#333333"/>
+<polyline points="72.0,417.4 303.5,412.5 535.0,377.0" fill="none" stroke="#d55e00" stroke-width="2.5"/>
+<circle cx="72.0" cy="417.4" r="3.5" fill="#d55e00"/>
+<circle cx="303.5" cy="412.5" r="3.5" fill="#d55e00"/>
+<circle cx="535.0" cy="377.0" r="3.5" fill="#d55e00"/>
+<polyline points="72.0,417.1 303.5,407.6 535.0,357.6" fill="none" stroke="#56b4e9" stroke-width="2.5"/>
+<circle cx="72.0" cy="417.1" r="3.5" fill="#56b4e9"/>
+<circle cx="303.5" cy="407.6" r="3.5" fill="#56b4e9"/>
+<circle cx="535.0" cy="357.6" r="3.5" fill="#56b4e9"/>
+<polyline points="72.0,417.2 303.5,412.4 535.0,370.8" fill="none" stroke="#0072b2" stroke-width="2.5"/>
+<circle cx="72.0" cy="417.2" r="3.5" fill="#0072b2"/>
+<circle cx="303.5" cy="412.4" r="3.5" fill="#0072b2"/>
+<circle cx="535.0" cy="370.8" r="3.5" fill="#0072b2"/>
+<polyline points="72.0,417.4 303.5,413.3 535.0,376.3" fill="none" stroke="#009e73" stroke-width="2.5"/>
+<circle cx="72.0" cy="417.4" r="3.5" fill="#009e73"/>
+<circle cx="303.5" cy="413.3" r="3.5" fill="#009e73"/>
+<circle cx="535.0" cy="376.3" r="3.5" fill="#009e73"/>
+<text x="840.5" y="25" class="title">Speedup relative to naive</text>
+<line x1="609.0" y1="418.0" x2="1072.0" y2="418.0" class="grid"/>
+<text x="599.0" y="422.0" class="tick" text-anchor="end">0</text>
+<line x1="609.0" y1="344.4" x2="1072.0" y2="344.4" class="grid"/>
+<text x="599.0" y="348.4" class="tick" text-anchor="end">4</text>
+<line x1="609.0" y1="270.8" x2="1072.0" y2="270.8" class="grid"/>
+<text x="599.0" y="274.8" class="tick" text-anchor="end">8</text>
+<line x1="609.0" y1="197.2" x2="1072.0" y2="197.2" class="grid"/>
+<text x="599.0" y="201.2" class="tick" text-anchor="end">12</text>
+<line x1="609.0" y1="123.6" x2="1072.0" y2="123.6" class="grid"/>
+<text x="599.0" y="127.6" class="tick" text-anchor="end">16</text>
+<line x1="609.0" y1="50.0" x2="1072.0" y2="50.0" class="grid"/>
+<text x="599.0" y="54.0" class="tick" text-anchor="end">20</text>
+<text x="609.0" y="442" class="tick" text-anchor="middle">256</text>
+<text x="840.5" y="442" class="tick" text-anchor="middle">512</text>
+<text x="1072.0" y="442" class="tick" text-anchor="middle">1024</text>
+<text x="840.5" y="470" class="label">Matrix dimension N</text>
+<text transform="translate(556.0,234.0) rotate(-90)" class="label">Speedup (×)</text>
+<polyline points="609.0,251.6 840.5,120.7 1072.0,263.5" fill="none" stroke="#d55e00" stroke-width="2.5"/>
+<circle cx="609.0" cy="251.6" r="3.5" fill="#d55e00"/>
+<circle cx="840.5" cy="120.7" r="3.5" fill="#d55e00"/>
+<circle cx="1072.0" cy="263.5" r="3.5" fill="#d55e00"/>
+<polyline points="609.0,301.9 840.5,261.5 1072.0,313.1" fill="none" stroke="#56b4e9" stroke-width="2.5"/>
+<circle cx="609.0" cy="301.9" r="3.5" fill="#56b4e9"/>
+<circle cx="840.5" cy="261.5" r="3.5" fill="#56b4e9"/>
+<circle cx="1072.0" cy="313.1" r="3.5" fill="#56b4e9"/>
+<polyline points="609.0,284.0 840.5,128.1 1072.0,283.6" fill="none" stroke="#0072b2" stroke-width="2.5"/>
+<circle cx="609.0" cy="284.0" r="3.5" fill="#0072b2"/>
+<circle cx="840.5" cy="128.1" r="3.5" fill="#0072b2"/>
+<circle cx="1072.0" cy="283.6" r="3.5" fill="#0072b2"/>
+<polyline points="609.0,236.7 840.5,69.1 1072.0,266.1" fill="none" stroke="#009e73" stroke-width="2.5"/>
+<circle cx="609.0" cy="236.7" r="3.5" fill="#009e73"/>
+<circle cx="840.5" cy="69.1" r="3.5" fill="#009e73"/>
+<circle cx="1072.0" cy="266.1" r="3.5" fill="#009e73"/>
+<line x1="80" y1="66" x2="100" y2="66" stroke="#333333" stroke-width="3"/>
+<text x="107" y="70" class="tick">naive</text>
+<line x1="205" y1="66" x2="225" y2="66" stroke="#d55e00" stroke-width="3"/>
+<text x="232" y="70" class="tick">ikj</text>
+<line x1="330" y1="66" x2="350" y2="66" stroke="#56b4e9" stroke-width="3"/>
+<text x="357" y="70" class="tick">tiled-16</text>
+<line x1="80" y1="87" x2="100" y2="87" stroke="#0072b2" stroke-width="3"/>
+<text x="107" y="91" class="tick">tiled-32</text>
+<line x1="205" y1="87" x2="225" y2="87" stroke="#009e73" stroke-width="3"/>
+<text x="232" y="91" class="tick">tiled-64</text>
+</svg>
