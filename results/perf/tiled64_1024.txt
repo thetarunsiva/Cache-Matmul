@@ -1,0 +1,13 @@
+# started on Tue Oct 20 17:18:07 2026
+
+
+ Performance counter stats for 'taskset -c 0 ./build/matmul_benchmark --size 1024 --algorithm tiled --tile 64 --profile' (3 runs):
+
+        1557497152      cycles:u                                                                ( +-  2.00% )
+        8931264567      instructions:u                                                          ( +-  0.00% )
+         204766168      cache-references:u                                                      ( +- 24.74% )
+          34954535      cache-misses:u                                                          ( +- 82.26% )
+         144562539      L1-dcache-load-misses:u                                                 ( +-  3.56% )
+
+       3.286268628 +- 1.280666465 seconds time elapsed  ( +- 38.97% )
+

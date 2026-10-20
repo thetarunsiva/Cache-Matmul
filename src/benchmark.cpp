@@ -24,6 +24,7 @@ struct Options {
     std::vector<std::size_t> tiles;
     std::string algorithm = "all";
     bool print_header = true;
+    bool profile = false;
 };
 
 std::size_t parse_positive(std::string_view text, const char* option) {
@@ -62,9 +63,12 @@ Options parse_options(int argc, char** argv) {
             }
         } else if (argument == "--no-header") {
             options.print_header = false;
+        } else if (argument == "--profile") {
+            options.profile = true;
         } else if (argument == "--help") {
             std::cout << "Usage: matmul_benchmark [--size N] [--repetitions N] "
-                         "[--tile N ...] [--algorithm all|naive|ikj|tiled] [--no-header]\n";
+                         "[--tile N ...] [--algorithm all|naive|ikj|tiled] "
+                         "[--no-header] [--profile]\n";
             std::exit(EXIT_SUCCESS);
         } else {
             throw std::invalid_argument("unknown option: " + std::string(argument));
@@ -72,6 +76,9 @@ Options parse_options(int argc, char** argv) {
     }
     if (options.tiles.empty()) {
         options.tiles.push_back(32);
+    }
+    if (options.profile && options.algorithm == "all") {
+        throw std::invalid_argument("--profile requires one explicit algorithm");
     }
     return options;
 }
@@ -141,6 +148,21 @@ int main(int argc, char** argv) {
         const Options options = parse_options(argc, argv);
         const Matrix A = make_input(options.size, 1);
         const Matrix B = make_input(options.size, 2);
+
+        // Profile mode omits warm-up and reference work so perf sees one kernel.
+        // Correctness is established by the normal benchmark path and test suite.
+        if (options.profile) {
+            Matrix result = options.algorithm == "naive"
+                ? matmul_naive(A, B)
+                : options.algorithm == "ikj"
+                    ? matmul_ikj(A, B)
+                    : matmul_tiled(A, B, options.tiles.front());
+            checksum_sink = checksum(result);
+            std::cout << std::fixed << std::setprecision(6)
+                      << "checksum=" << checksum_sink << '\n';
+            return EXIT_SUCCESS;
+        }
+
         const Matrix reference = matmul_naive(A, B);
 
         if (options.print_header) {

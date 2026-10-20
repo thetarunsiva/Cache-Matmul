@@ -1,0 +1,18 @@
+Measurement date: 2026-10-20
+CPU: AMD Ryzen 5 5600H with Radeon Graphics (6 cores, 12 threads)
+Environment: Ubuntu 26.04.1 LTS under WSL2, Linux 6.6.87.2-microsoft-standard-WSL2
+Compiler: g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+CMake: 4.2.3
+perf: 7.0.14
+Build flags: C++17, -O2, -Wall, -Wextra, -Wpedantic (CMake Release also defines NDEBUG)
+Cache hierarchy: 32 KiB L1D/core, 512 KiB L2/core, 16 MiB shared L3, 64-byte lines
+Benchmark: single-threaded, one warm-up, 7 repetitions, median steady_clock time
+Sizes: 256, 512, 1024
+Tile sizes: 16, 32, 64
+Primary benchmark was scheduler-unpinned.
+Profile command template:
+  perf stat --no-big-num -r 3 -e cycles,instructions,cache-references,cache-misses,L1-dcache-load-misses -o OUTPUT -- taskset -c 0 ./build/matmul_benchmark --size 1024 --algorithm ALGORITHM --profile
+
+The profile mode runs one selected kernel after deterministic input initialization.
+Unlike the median benchmark path, it intentionally omits warm-up and the naive
+reference calculation so unrelated multiplication work is not included in counters.

@@ -1,0 +1,13 @@
+# started on Tue Oct 20 17:14:55 2026
+
+
+ Performance counter stats for 'taskset -c 0 ./build/matmul_benchmark --size 1024 --algorithm naive --profile' (3 runs):
+
+       20958545686      cycles:u                                                                ( +-  0.51% )
+        8652559210      instructions:u                                                          ( +-  0.00% )
+        1265939630      cache-references:u                                                      ( +-  0.49% )
+         451513814      cache-misses:u                                                          ( +-  1.28% )
+        1237177324      L1-dcache-load-misses:u                                                 ( +-  0.05% )
+
+      59.140660255 +- 0.252594403 seconds time elapsed  ( +-  0.43% )
+
