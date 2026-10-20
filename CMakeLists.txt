@@ -14,6 +14,9 @@ target_include_directories(project_options INTERFACE include)
 add_executable(matmul_demo src/main.cpp)
 target_link_libraries(matmul_demo PRIVATE project_options)
 
+add_executable(matmul_benchmark src/benchmark.cpp)
+target_link_libraries(matmul_benchmark PRIVATE project_options)
+
 add_executable(matmul_tests tests/test_matmul.cpp)
 target_link_libraries(matmul_tests PRIVATE project_options)
 
